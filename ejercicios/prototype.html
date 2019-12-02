@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> Prototype</title>
+    </head>
+    <body>
+        <a href="/ejercicios/">go back</a>
+        <p><em> Abre la consola</em></p>
+            <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+        <script>
+            
+            //Un objeto común y corriente
+            // const Dav = {
+            //      name: 'Dav4'
+            // }
+
+            // Dav.saludar = function() {
+            //     console.log(`Hola soy ${this.name}`)
+            // }
+
+            // Dav.saludar()
+
+            // const Dav4 = {
+            //      name: 'Diego Avila'
+            // }
+
+            // Dav4.saludar = function() {
+            //     console.log(`Hola soy ${this.name}`)
+            // }
+
+            // Dav4.saludar()
+// -------------------------------------------
+// -------------------------------------------
+                
+        // function  Hero(name){
+        //             const hero = {
+        //                 name: name,
+        //             }
+
+        //             hero.saludar = function(){
+        //                 console.log(`Hola soy ${this.name}`)
+        //             }
+
+        //             return hero
+        //         }
+
+        //     const Dav = Hero("Dav")
+        //     Dav.saludar()
+
+        //     const Dav4 = Hero('Dav4')
+        //         Dav4.saludar()
+
+// ------------------------------------------------
+// ------------------------------------------------
+
+            // Dav.saludar = function() {
+            //     console.log(`Hola soy ${this.name}`)
+            // }
+
+            // Dav.saludar()
+
+            // const Dav4 = {
+            //      name: 'Diego Avila'
+            // }
+
+            // Dav4.saludar = function() {
+            //     console.log(`Hola soy ${this.name}`)
+            // }
+
+            // Dav4.saludar()
+
+// -----------------------------------------------
+// -----------------------------------------------
+
+            //otro objeto más
+            //Seamos un poco más eficiente
+            
+            //Aun podemos mejorar más y evitar tener que
+            //crear la misma función cada vez que creamos un objeto
+            
+            // const heroMethods = {
+            //     saludar: function(){
+            //         console.log(`Me llamo ${this.name}`)
+            //     },
+            // }
+            
+            // function Hero(name){
+            //     const hero = {
+            //         name: name,
+            //     };
+
+            //     hero.saludar = heroMethods.saludar
+
+            //     return hero
+            // }
+
+            // const zelda = Hero('Zelda')
+            // zelda.saludar()
+
+            // const link = Hero('link')
+            // link.saludar()
+
+
+            //Object.create recibira un objeto
+            //object.create(objeto) y como recibe un objeto hay que crearlo.
+            // const nuevoObjeto = Object.create(objeto)
+
+            const heroMethods = {
+                saludar: function(){
+                    console.log(`Me llamo ${this.name}`)
+                },
+            }
+            
+            function Hero(name){
+                const hero = Object.create(heroMethods)
+                hero.name
+                
+                return hero
+            }
+
+            const zelda = Hero('Zelda')
+            zelda.saludar()
+
+            const link = Hero('link')
+            link.saludar()
+
+
+            //Los métodos de hero dentro de Hero
+
+            // new es un atajo (azucar sintactica) para llevar
+            // Hero.prototype al objeto
+
+        </script>
+
+    </body>
+</html>

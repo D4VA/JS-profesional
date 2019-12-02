@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scope
+        </title>
+    </head>
+        <body>
+            <a href="/ejercicios/">Go back</a>
+            <p><em> Abre la consola </em></p>
+            
+            <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+
+            <script>
+            //Global Scope
+                // var message = "Hello, Dav!";
+                // var $ = function(message) {
+                //     console.log('Say:' + message);
+                // };
+            // Function Scope
+                // function printNumeros(){
+                //     var i;
+                //     for(var i = 0; i<10; i++){
+                //         function eventuallyPrintNumber(n){
+                //             setTimeout(function(){
+                //                 console.log(n)
+                //             }, 100)
+                //         }
+
+                //         eventuallyPrintNumber(i)
+                //     }
+                // }
+
+                // printNumeros();
+
+            //Black Scope
+                function printNumeros2(){
+                    for(let i = 0; i<10; i++){
+                            setTimeout(function() {
+                                console.log(i)
+                            }, 100)
+                    }
+                }
+                printNumeros2()
+
+            //Module Scope
+                function printNumeros3(){
+                    for(let i = 0; i<10; i++){
+                        setTimeout(function(){
+                            console.log(i)
+                        }, 100)
+                    }
+                }
+
+            </script>
+        </body>
+</html>
